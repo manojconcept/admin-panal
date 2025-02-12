@@ -6,7 +6,6 @@ let isRefreshing = false;
 let failedRequestsQueue: any[] = [];
 
 const setupInterceptors = () => {
-  // Request interceptor to add the access token to headers
   userAxiosInstance.interceptors.request.use(
     (config) => {
       const accessToken = store.getState().auth.accessToken;
@@ -20,7 +19,6 @@ const setupInterceptors = () => {
     }
   );
 
-  // Response interceptor to handle token refresh
   userAxiosInstance.interceptors.response.use(
     (response) => response,
     async (error) => {
@@ -40,7 +38,6 @@ const setupInterceptors = () => {
           const newAccessToken = await store.dispatch(refreshToken()).unwrap();
           originalRequest.headers.Authorization = `Bearer ${newAccessToken}`;
 
-          // Retry all failed requests
           failedRequestsQueue.forEach((prom) => prom.resolve(userAxiosInstance(originalRequest)));
           return userAxiosInstance(originalRequest);
         } catch (refreshError) {
