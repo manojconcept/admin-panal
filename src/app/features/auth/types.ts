@@ -6,6 +6,6 @@ export interface AuthState {
   }
   
   export interface LoginPayload {
-    email: string;
+    logname: string;
     password: string;
   }

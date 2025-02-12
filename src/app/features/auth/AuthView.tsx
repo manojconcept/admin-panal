@@ -6,7 +6,7 @@ const AuthView = () => {
   const { isAuthenticated, loading, error } = useAppSelector((state) => state.auth);
 
   const handleLogin = () => {
-    dispatch(login({ email: 'user@example.com', password: 'password' }));
+    dispatch(login({ logname: 'splashmela', password: 'demo1234' }));
   };
 
   const handleLogout = () => {
