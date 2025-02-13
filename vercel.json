@@ -2,7 +2,7 @@
     "rewrites": [
         {
             "source": "/api/(.*)",
-            "destination": "https://manoj-backend-tem.onrender.com/$1"
+            "destination": "https://backend-template-six.vercel.app//$1"
         },
         {
             "source": "/(.*)",
