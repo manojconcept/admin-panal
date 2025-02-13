@@ -39,7 +39,7 @@ function App() {
     <Loader />
   ) : (
     <Routes>
-      <Route path='/signup' element={<SignUp />} />
+      <Route path='/signup' element={<AuthView />} />
       {/* <Route path='/signin' element={<SignIn />} /> */}
       <Route path='/signin' element={<AuthView />} />
       <Route path='/otp' element={<Otp />} />
