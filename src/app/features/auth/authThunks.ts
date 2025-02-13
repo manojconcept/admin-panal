@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { userAxiosInstance } from '../../../api/axiosInstance';
 import { LoginPayload } from './types';
+import jsVectorMap from 'jsvectormap';
 
 export const login = createAsyncThunk(
   'auth/login',
@@ -31,6 +32,19 @@ export const logout = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       await userAxiosInstance.post('/auth/logout');
+      return;
+    } catch (error: any) {
+      return rejectWithValue(error.response?.data?.message || 'Logout failed');
+    }
+  }
+);
+
+
+export const getCookie = createAsyncThunk(
+  'auth/getcookie',
+  async (_, { rejectWithValue }) => {
+    try {
+      await userAxiosInstance.post('/auth/getcookie');
       return;
     } catch (error: any) {
       return rejectWithValue(error.response?.data?.message || 'Logout failed');
