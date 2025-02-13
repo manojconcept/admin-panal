@@ -1,17 +1,12 @@
 {
-
- "rewrites": [
-
-  {
-
-   "source": "/api/(.*)",
-
-   "destination": "https://manoj-backend-tem.onrender.com/$1"
-
-  },
-
-  { "source": "/(.*)", "destination": "/index.html" }
-
- ]
-
+    "rewrites": [
+        {
+            "source": "/api/(.*)",
+            "destination": "https://manoj-backend-tem.onrender.com/$1"
+        },
+        {
+            "source": "/(.*)",
+            "destination": "/index.html"
+        }
+    ]
 }
