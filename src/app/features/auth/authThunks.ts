@@ -1,7 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { userAxiosInstance } from '../../../api/axiosInstance';
 import { LoginPayload } from './types';
-import jsVectorMap from 'jsvectormap';
 
 export const login = createAsyncThunk(
   'auth/login',
